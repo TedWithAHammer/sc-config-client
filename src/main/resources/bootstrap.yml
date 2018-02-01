@@ -1,13 +1,16 @@
 server:
-  port: 50002
+  port: 60001
 spring:
   application:
     name: config-client
   cloud:
     config:
-      profile: prod
-      uri: http://localhost:50001/
+      profile: test
+      #uri: http://localhost:50001/
       label: master
+      discovery:
+        enabled: true
+        service-id: config-server
 eureka:
   client:
     service-url:
